@@ -30,8 +30,8 @@ for (( i = 0; i <= 4 ; i++ ))
 do
    for (( j = $i; j <= 4; j++ ))
    do
-      if [ ${array[$i]} -lt ${array[$j]}  ]; then
-           t=${array[$i]}
+      if [ ${array[$i]} -gt ${array[$j]}  ]; then
+            t=${array[$i]}
            array[$i]=${array[$j]}
            array[$j]=$t
       fi
@@ -39,7 +39,7 @@ do
 done
 
 
-echo  "  Numbers in Descending Order:"
+echo  "  Numbers in Ascending Order:"
 for (( i=0; i <= 4; i++ )) 
 do
   echo ${array[$i]}
