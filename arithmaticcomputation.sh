@@ -14,6 +14,33 @@ echo "Fourth computation is : " ${Dict[result4]}
 #echo ${Dict[@]}
 
 
-Array=(${Dict[result1]} ${Dict[result2]} ${Dict[result3]} ${Dict[result4]})
-echo " Array"  ${Array[@]}
+array=(${Dict[result1]} ${Dict[result2]} ${Dict[result3]} ${Dict[result4]})
+echo " Array"  ${array[@]}
 
+
+echo " Numbers in array:"
+for (( i = 0; i <= 4; i++ ))
+do
+  echo ${array[$i]}
+done
+
+
+
+for (( i = 0; i <= 4 ; i++ ))
+do
+   for (( j = $i; j <= 4; j++ ))
+   do
+      if [ ${array[$i]} -lt ${array[$j]}  ]; then
+           t=${array[$i]}
+           array[$i]=${array[$j]}
+           array[$j]=$t
+      fi
+   done
+done
+
+
+echo  "  Numbers in Descending Order:"
+for (( i=0; i <= 4; i++ )) 
+do
+  echo ${array[$i]}
+done
