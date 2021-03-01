@@ -1,5 +1,14 @@
 #!/bin/bash -x
-echo "Enter the three inputs :: "
+echo "Enter three inputs :: " 
 read a b c
-result1=$(($a%$b+$c))
-echo $result1
+declare -A Dict
+Dict[result1]=$(($a+$b*$c))
+Dict[result2]=$(($a*$b+$c))
+Dict[result3]=$(($c+$a/$b))
+Dict[result4]=$(($a%$b+$c))
+
+echo "First computation is :  " ${Dict[result1]} 
+echo "Second computation is : " ${Dict[result2]}
+echo "Third computation is :  " ${Dict[result3]}
+echo "Fourth computation is : " ${Dict[result4]}
+echo ${Dict[@]}
