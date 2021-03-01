@@ -11,4 +11,9 @@ echo "First computation is :  " ${Dict[result1]}
 echo "Second computation is : " ${Dict[result2]}
 echo "Third computation is :  " ${Dict[result3]}
 echo "Fourth computation is : " ${Dict[result4]}
-echo ${Dict[@]}
+#echo ${Dict[@]}
+
+
+Array=(${Dict[result1]} ${Dict[result2]} ${Dict[result3]} ${Dict[result4]})
+echo " Array"  ${Array[@]}
+
